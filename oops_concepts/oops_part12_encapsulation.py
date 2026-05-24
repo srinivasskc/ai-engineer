@@ -85,28 +85,31 @@ class Manager(Employee):
 
     def increase_pay(self):
         super().increase_pay()   #do what employee gets.
-        for emp in self.employees:
-            emp.pay = int(emp.pay * 1.01)
+        for emp in self.employees:  # manager specific behaviour
+            emp.pay = int(emp.pay * 1.01) # Extra bonus to employees.
 
-dev1 = Developer("Arjun","Tendulkar",20000,"Python")
-dev2 = Developer("Sara","Tendulkar",24000,"Java")
+dev1 = Developer("Arjun","Tendulkar",800000,"Python")
+dev2 = Developer("Sara","Tendulkar",900000,"Java")
 
-mgr1 = Manager("Sachin","Tendulkar",150000,[dev1])
+mgr1 = Manager("Sachin","Tendulkar",1500000,[dev1,dev2])
 
-mgr1.print_employees()
-mgr1.add_employees(dev2)
-print("===After adding Employee===")
-mgr1.print_employees()
-print("===Removing the first Empoyee===")
-mgr1.remove_employees(dev1)
-mgr1.print_employees()
+# mgr1.print_employees()
+# mgr1.add_employees(dev2)
+# print("===After adding Employee===")
+# mgr1.print_employees()
+# print("===Removing the first Empoyee===")
+# mgr1.remove_employees(dev1)
+# mgr1.print_employees()
 
 print("===Before changes pay===")
 print(f"Manager: Rs.{mgr1.pay: }")
 print(f" {dev1.first}: Rs.{dev1.pay: }")
 print(f" {dev2.first}: Rs.{dev2.pay: }")
 
+# increasing the manager pay.
 mgr1.increase_pay()
+
+
 print("===After changes pay===")
 print(f"Manager: Rs.{mgr1.pay: }")
 print(f" {dev1.first}: Rs.{dev1.pay: }")
