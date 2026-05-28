@@ -15,9 +15,9 @@ Count how many letters are in that word. That count becomes a digit in your secr
 
 def pin_extractor(poems):
     secret_codes = []
-    for poem in poems:
+    for single_poem in poems:
         secret_code = ""
-        lines = poem.split("\n")
+        lines = single_poem.split("\n")
         for line_index, line in enumerate(lines):
             words = line.split()
             if len(words) > line_index:
