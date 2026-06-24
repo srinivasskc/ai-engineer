@@ -63,6 +63,10 @@ class Enemy(Person):
         super().__init__(firstName, lastName, health, status)
         self.weapon = weapon
 
+    # Polymorphism - Method Overriding
+    def introduce(self):
+        print("You are my mortal enemy!!")
+
     # Here self is Self Person, other is Other hurting-> person/insult person.
     def hurt(self, other):
         if self.weapon == "rock":
@@ -90,3 +94,6 @@ Matt = Enemy("stick", "Matt", "Hutt", 85, status=True)
 Matt.hurt(Srinivas)
 Matt.insult(Srinivas)
 Matt.insult(Vasu)
+
+print("====Calling Polymorphism method-Enemey===")
+Alex.introduce()
