@@ -17,11 +17,11 @@ class Person:
 
     def emotion(self):
         """ """
-        emotion = random.randrange(1, 3)
+        emotion = random.randrange(1, 4)
 
-        if self.emotion == 1:
+        if emotion == 1:
             print(f"{self.firstName} is happy")
-        elif self.emotion == 2:
+        elif emotion == 2:
             print(f"{self.firstName} is not happy")
         else:
             print(f"{self.firstName} is sad")
@@ -51,3 +51,7 @@ Vasu.introduce()
 
 Srinivas.status_check()
 Vasu.status_check()
+
+
+Srinivas.emotion()
+Vasu.emotion()
