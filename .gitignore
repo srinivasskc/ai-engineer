@@ -223,3 +223,7 @@ __marimo__/
 # uv
 pyproject.toml
 uv.lock
+
+
+# claude
+.claude
