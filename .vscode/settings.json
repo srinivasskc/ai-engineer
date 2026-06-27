@@ -1,8 +1,9 @@
 {
-    "python.analysis.extraPaths": [
-        "./pytest_tau"
-    ],
-    "python.autoComplete.extraPaths": [
-        "./pytest_tau"
+    "python.analysis.extraPaths": ["./pytest_tau"],
+    "python.autoComplete.extraPaths": ["./pytest_tau"],
+    "pylint.args": [
+        "--extension-pkg-whitelist=lxml",
+        "--init-hook",
+        "import sys;sys.path.insert(0,'./pytest_tau')"
     ]
-}
+} 
