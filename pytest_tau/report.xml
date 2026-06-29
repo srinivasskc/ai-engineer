@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="0.095" timestamp="2026-06-29T11:05:48.438489+05:30" hostname="DESKTOP-ORTJUO1"><testcase classname="tests.test_math" name="test_one_plus_one" time="0.001" /><testcase classname="tests.test_math" name="test_one_plus_two" time="0.002"><failure message="assert (1 + 1) == 0">def test_one_plus_two():
+        a = 1
+        b = 1
+        c = 0
+&gt;       assert a + b == c
+E       assert (1 + 1) == 0
+
+tests\test_math.py:12: AssertionError</failure></testcase><testcase classname="tests.test_math" name="test_divide_by_zero" time="0.000" /></testsuite></testsuites>
