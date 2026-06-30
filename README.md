@@ -79,4 +79,104 @@ Exports test results into a standard JUnit XML report format (report.xml), which
 python -m pytest tests/test_math.py --junit-xml report.xml
 ```
 
+# Pytest Cheat Sheet: Filtering and Syntax Rules
+
+When running specific tests in a project, matching `pytest`'s precise syntax is crucial. This guide clarifies how to target individual test functions within a specific test module.
+
+---
+
+## 🔍 Targeting Specific Tests
+
+### Syntax (Double Colon)
+```bash
+python -m pytest tests/cart_tests/test_cart_conftest.py::test_add_item_to_cart
+```
+
+
+---
+
+## 🏷️ Substring Filtering (`-k`)
+
+You can run a specific subset of tests across files and directories by matching keywords in their function names using the `-k` flag.
+
+### Run tests matching a specific keyword
+To execute all tests that contain the word `item` in their function name within a target directory:
+```bash
+python -m pytest tests/cart_tests -k item
+```
+
+### Advanced Boolean Filtering
+The -k flag supports boolean logic (and, or, not), allowing you to combine or exclude specific terms dynamically:
+
+Match multiple terms: Run tests containing both item AND cart:
+```bash
+python -m pytest tests/cart_tests -k "item and cart"
+```
+
+Exclude terms: Run tests containing item but NOT conftest:
+```bash
+python -m pytest tests/cart_tests -k "item and not conftest"
+```
+
+## Custom Markers
+To add your custom markers using pyproject.toml, you need to register them under the [tool.pytest.ini_options] block using the markers configuration option.
+
+---
+
+## 🏷️ Custom Test Markers (`markers`)
+
+Custom markers allow you to tag specific test cases so you can run them selectively as a group.
+
+### 1. Registering Markers in `pyproject.toml`
+To avoid unexpected configuration warnings, always register your custom markers in your `pyproject.toml` file under the `[tool.pytest.ini_options]` block using an array:
+
+```toml
+[tool.pytest.ini_options]
+addopts = "--verbose"
+markers = [
+    "item: custom marker for item add/remove test cases"
+]
+```
+
+### 2. Applying Markers to Code
+Decorate your test functions using @pytest.mark.<marker_name>:
+```  Python
+import pytest
+
+@pytest.mark.item
+def test_add_item_to_cart():
+    assert True
+```
+
+### 3. Running Marked Tests (-m)
+To execute only the test cases tagged with your custom marker, use the -m flag:
+
+```Bash
+python -m pytest tests/cart_tests -m item
+```
+
+### 4. Include Only Specific Patterns
+To execute tests matching a keyword *only* if they also appear within a specific file pattern or configuration context (such as a local `conftest` directory setup):
+```bash
+python -m pytest tests/cart_tests -k "item and conftest"
+```
+
+---
+
+## 🎯 Restricting Test Discovery (`testpaths`)
+
+By default, pytest searches your entire workspace directory to discover tests. For large projects, this can slow down discovery times.
+
+### Enforcing Search Directories in `pyproject.toml`
+To optimize discovery and restrict pytest to search *only* within a specific folder, use the `testpaths` configuration option:
+
+```toml
+[tool.pytest.ini_options]
+addopts = "--verbose"
+markers = [
+    "item: custom marker for item add/remove test cases"
+]
+testpaths = "tests/cart_tests"
+```
+
 
