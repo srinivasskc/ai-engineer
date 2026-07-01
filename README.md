@@ -163,11 +163,11 @@ python -m pytest tests/cart_tests -k "item and conftest"
 
 ---
 
-## 🎯 Restricting Test Discovery (`testpaths`)
+## 5. Restricting Test Discovery (`testpaths`)
 
 By default, pytest searches your entire workspace directory to discover tests. For large projects, this can slow down discovery times.
 
-### Enforcing Search Directories in `pyproject.toml`
+### 6. Enforcing Search Directories in `pyproject.toml`
 To optimize discovery and restrict pytest to search *only* within a specific folder, use the `testpaths` configuration option:
 
 ```toml
@@ -180,3 +180,70 @@ testpaths = "tests/cart_tests"
 ```
 
 
+### 7. Test Reporting
+Extend your local test architecture with metrics and shareable reporting frameworks.
+
+HTML Test Reports (pytest-html)
+Generates a permanent, shareable standalone HTML document summarizing your test run.
+
+```Bash
+pip install pytest-html
+python -m pytest tests/cart_tests/test_cart.py --html=report.html
+```
+
+
+### 8. Code Coverage Tracking (pytest-cov)
+Integrates coverage.py to calculate what percentage of your source code is verified by your test suite.
+
+```Bash
+pip install pytest-cov
+```
+
+### Critical Coverage Best Practices:
+Target Product Code Only: Always point the --cov flag at your actual production code directory, not your tests folder. Including the tests/ directory artificially inflates metrics since test files naturally execute 100% of their own lines during discovery.
+
+```Bash
+python -m pytest --cov=my_package
+```
+
+### Tracking Multiple Directories: 
+To aggregate coverage metrics across multiple package roots into a unified report, pass individual flags side-by-side:
+
+```Bash
+python -m pytest --cov=my_package --cov=another_package
+```
+
+### Advanced Coverage Configurations
+Branch Analysis (--cov-branch): Forces the coverage engine to measure logical pathing (evaluating both the True and False outcomes of a conditional if/else block) rather than just tracking line execution. Highly recommended as a baseline suite option.
+
+```Bash
+python -m pytest --cov=my_package --cov-branch
+```
+
+### Visual HTML Dashboards (--cov-report html): 
+Generates an interactive, line-by-line visual report inside a generated htmlcov/ folder. Open htmlcov/index.html in any browser to see code paths highlighted in green (covered) or red (missed statement gaps).
+
+```Bash
+python -m pytest --cov=my_package --cov-report html
+```
+
+### 9. Parallel Execution Scaling (pytest-xdist)
+Scale your execution speed by distributing your test workloads across multiple CPU cores instead of running them sequentially.
+
+```Bash
+pip install pytest-xdist
+```
+
+### Parallel Execution Commands
+Specify the exact number of worker processes to allocate via the -n flag:
+
+```Bash
+python -m pytest -n 3
+```
+
+### Auto-Scale Mode: 
+Instructs pytest to auto-detect and utilize every logical core available on your local runtime architecture:
+
+```Bash
+python -m pytest -n auto
+```
