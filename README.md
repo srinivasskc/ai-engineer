@@ -247,3 +247,49 @@ Instructs pytest to auto-detect and utilize every logical core available on your
 ```Bash
 python -m pytest -n auto
 ```
+
+
+## Dependencies
+
+This project is built using a structured stack of LangChain orchestration tools, AI model integrations, and machine learning utilities. 
+
+Below are the explicitly installed core packages along with the exact versions currently running in this environment:
+
+### Core Framework & Orchestration
+*   **LangChain Core**
+    *   `langchain==1.3.11`
+    *   `langchain-core==1.4.8`
+*   **Agentic Workflows**
+    *   `langgraph==1.2.7`
+
+### Provider Integrations
+*   **OpenAI Integration**
+    *   `openai==2.44.0`
+    *   `langchain-openai==1.3.3`
+*   **Anthropic Integration**
+    *   `anthropic==0.115.1`
+    *   `langchain-anthropic==1.4.8`
+*   **Google Gemini Integration**
+    *   `google-generativeai==0.8.6`
+    *   `langchain-google-genai==4.2.6`
+*   **Hugging Face Integration**
+    *   `huggingface_hub==1.21.0`
+    *   `transformers==5.12.1`
+    *   `langchain-huggingface==1.2.2`
+
+### Environment & Utilities
+*   **Environment Variable Management**
+    *   `python-dotenv==1.2.2`
+*   **Machine Learning & Math Utilities**
+    *   `numpy==2.5.0`
+    *   `scikit-learn==1.9.0`
+
+---
+
+### Setup and Installation
+
+To ensure total environment reproducibility and prevent breaking changes from upstream GenAI library updates, lock your versions using a requirements file.
+
+1. Install the packages using your tracked dependencies:
+   ```bash
+   pip install -r requirements.txt
