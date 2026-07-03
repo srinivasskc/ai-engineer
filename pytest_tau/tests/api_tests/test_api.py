@@ -9,7 +9,7 @@ def test_duckduckgo_instant_answer_api():
     URL = "https://jsonplaceholder.typicode.com/todos/1"
 
     # Act
-    response = requests.get(url=URL)
+    response = requests.get(url=URL, timeout=500)
     body = response.json()
 
     # Assert
