@@ -1,146 +1,104 @@
-# AI Engineer Journey: Learning & Core Python
+# AI Engineer Journey: Learning & Projects
 
-Welcome to my central repository for tracking my progress, projects, and learning modules on the path to becoming an AI QA Engineer. 
+Welcome to my central repository for tracking progress, projects, and learning modules on the path to becoming an AI QA Engineer.
+
 ---
 
 ## 📂 Repository Structure
 
 The repository is organized into targeted modules focusing on different aspects of Python and hands-on exercises:
 
-* **`oops_concepts/`**: Focuses on core Object-Oriented Programming principles in Python (Classes, Inheritance, Polymorphism, Encapsulation, and data structures like Tuples).
-* **`python_freecodecamp/`**: Practical algorithms, scripting logic, and foundational programming challenges (e.g., number pattern generators).
-* **`python_tau/`**: Advanced deep dives into object mechanics, specifically showcasing concepts like **Polymorphism** and **Method Overriding**.
+| Directory | Description |
+|-----------|--------------|
+| `oops_concepts/` | Core Object-Oriented Programming principles (Classes, Inheritance, Polymorphism, Encapsulation, Tuples) |
+| `python_freecodecamp/` | Practical algorithms, scripting logic, and foundational programming challenges |
+| `python_tau/` | Advanced deep dives into object mechanics (Polymorphism, Method Overriding) |
+| `pytest_tau/` | Pytest testing guides and web UI testing with Playwright |
 
 ---
 
 ## 🚀 Key Learning Milestones
 
-* **Object-Oriented Programming (OOP):** Mastered building robust, reusable code components using method overriding and polymorphic classes.
-* **Data Structures & Patterns:** Implementing foundational Python data structures (Tuples, Lists) and algorithmic logic.
-* **Interactive Development:** Leveraging Jupyter Notebooks for rapid prototyping and clean data visualization.
+- **Object-Oriented Programming (OOP):** Building robust, reusable code components using method overriding and polymorphic classes
+- **Data Structures & Patterns:** Implementing foundational Python data structures (Tuples, Lists) and algorithmic logic
+- **Interactive Development:** Leveraging Jupyter Notebooks for rapid prototyping and data visualization
+- **Testing & Quality Assurance:** Mastering pytest, test automation, and web UI testing
 
 ---
 
 ## 🛠️ Tech Stack & Environment
 
-* **Languages:** Python (32.1%), Jupyter Notebook (67.9%)
-* **Environment Management:** Managed seamlessly via `.python-version` configurations and `uv` for fast package resolution.
-
-### Getting Started
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/srinivasskc/ai-engineer.git](https://github.com/srinivasskc/ai-engineer.git)
-   cd ai-engineer
-
-# Pytest Cheat Sheet: Commands & Configs
-
-This repository demonstrates essential command-line options and configuration techniques for optimizing test execution using `pytest`.
+- **Languages:** Python (32.1%), Jupyter Notebook (67.9%)
+- **Environment Management:** `.python-version` configurations and `uv` for fast package resolution
 
 ---
 
-## 🚀 Essential CLI Commands
+## 📦 Dependencies
 
-Run these commands from the root directory of your project to control test output and execution behavior.
+This project uses a structured stack of LangChain orchestration tools, AI model integrations, and machine learning utilities.
 
-### 1. Help Menu
-List all available command-line options, descriptions, and active plugin flags.
-```bash
-python -m pytest --help
-```
+### Core Framework & Orchestration
+- **LangChain:** `langchain==1.3.11`, `langchain-core==1.4.8`
+- **LangGraph:** `langgraph==1.2.7`
 
-###  2. Verbose Output (-v / --verbose)
-Prints a highly detailed console output displaying metadata, the full path, explicit name, and individual status (PASSED/FAILED) for each test case.
-```bash
-python -m pytest tests/test_math.py --verbose
-```
+### Provider Integrations
+- **OpenAI:** `openai==2.44.0`, `langchain-openai==1.3.3`
+- **Anthropic:** `anthropic==0.115.1`, `langchain-anthropic==1.4.8`
+- **Google Gemini:** `google-generativeai==0.8.6`, `langchain-google-genai==4.2.6`
+- **Hugging Face:** `huggingface_hub==1.21.0`, `transformers==5.12.1`, `langchain-huggingface==1.2.2`
 
-###  3. Quiet Mode (-q / --quiet)
-Minimizes console noise by hiding the initialization banner and module paths. It prints only the foundational progress indicators (dots and Fs) followed by failure introspections.
-```bash
-python -m pytest tests/test_math.py --quiet
-```
-
-###  4. Exit First (-x / --exitfirst)
-Instructs pytest to instantly halt the entire test suite execution the moment a single failure is encountered.
-```bash
-python -m pytest tests/test_math.py --exitfirst
-```
-
-###  5. Maximum Failures (--maxfail)
-Stops test execution completely after reaching a specific threshold of failures. This is highly efficient for managing large-scale test suites.
-```bash
-python -m pytest tests/test_math.py --maxfail=1
-```
-
-###  6. Generate JUnit XML Reports (--junit-xml)
-Exports test results into a standard JUnit XML report format (report.xml), which is widely compatible with Continuous Integration (CI) dashboards like Jenkins or GitHub Actions.
-```bash
-python -m pytest tests/test_math.py --junit-xml report.xml
-```
-
-# Pytest Cheat Sheet: Filtering and Syntax Rules
-
-When running specific tests in a project, matching `pytest`'s precise syntax is crucial. This guide clarifies how to target individual test functions within a specific test module.
+### Environment & Utilities
+- **python-dotenv:** `1.2.2`
+- **numpy:** `2.5.0`
+- **scikit-learn:** `1.9.0`
 
 ---
 
-## 🔍 Targeting Specific Tests
+## 🧪 Pytest Testing Guide
 
-### Syntax (Double Colon)
+### Essential CLI Commands
+
+Run these commands from the root directory:
+
+| Command | Description |
+|---------|-------------|
+| `python -m pytest --help` | List all available command-line options |
+| `python -m pytest --verbose` or `-v` | Detailed output with test names and status |
+| `python -m pytest --quiet` or `-q` | Minimized output (dots and Fs only) |
+| `python -m pytest --exitfirst` or `-x` | Stop on first failure |
+| `python -m pytest --maxfail=N` | Stop after N failures |
+| `python -m pytest --junit-xml=report.xml` | Generate JUnit XML report |
+
+### Targeting Specific Tests
+
 ```bash
+# Run a specific test function
 python -m pytest tests/cart_tests/test_cart_conftest.py::test_add_item_to_cart
 ```
 
+### Substring Filtering (-k)
 
----
-
-## 🏷️ Substring Filtering (`-k`)
-
-You can run a specific subset of tests across files and directories by matching keywords in their function names using the `-k` flag.
-
-### Run tests matching a specific keyword
-To execute all tests that contain the word `item` in their function name within a target directory:
 ```bash
+# Run tests matching a keyword
 python -m pytest tests/cart_tests -k item
-```
 
-### Advanced Boolean Filtering
-The -k flag supports boolean logic (and, or, not), allowing you to combine or exclude specific terms dynamically:
-
-Match multiple terms: Run tests containing both item AND cart:
-```bash
+# Boolean filtering (and, or, not)
 python -m pytest tests/cart_tests -k "item and cart"
-```
-
-Exclude terms: Run tests containing item but NOT conftest:
-```bash
 python -m pytest tests/cart_tests -k "item and not conftest"
 ```
 
-## Custom Markers
-To add your custom markers using pyproject.toml, you need to register them under the [tool.pytest.ini_options] block using the markers configuration option.
+### Custom Test Markers
 
----
-
-## 🏷️ Custom Test Markers (`markers`)
-
-Custom markers allow you to tag specific test cases so you can run them selectively as a group.
-
-### 1. Registering Markers in `pyproject.toml`
-To avoid unexpected configuration warnings, always register your custom markers in your `pyproject.toml` file under the `[tool.pytest.ini_options]` block using an array:
-
+**1. Register markers in `pyproject.toml`:**
 ```toml
 [tool.pytest.ini_options]
-addopts = "--verbose"
 markers = [
     "item: custom marker for item add/remove test cases"
 ]
 ```
 
-### 2. Applying Markers to Code
-Decorate your test functions using @pytest.mark.<marker_name>:
-```  Python
+**2. Apply markers to test functions:**
+```python
 import pytest
 
 @pytest.mark.item
@@ -148,148 +106,105 @@ def test_add_item_to_cart():
     assert True
 ```
 
-### 3. Running Marked Tests (-m)
-To execute only the test cases tagged with your custom marker, use the -m flag:
-
-```Bash
+**3. Run marked tests:**
+```bash
 python -m pytest tests/cart_tests -m item
 ```
 
-### 4. Include Only Specific Patterns
-To execute tests matching a keyword *only* if they also appear within a specific file pattern or configuration context (such as a local `conftest` directory setup):
-```bash
-python -m pytest tests/cart_tests -k "item and conftest"
+### Test Discovery Configuration
+
+Restrict pytest to search only within specific folders:
+```toml
+[tool.pytest.ini_options]
+testpaths = "tests/cart_tests"
 ```
 
 ---
 
-## 5. Restricting Test Discovery (`testpaths`)
+## 📊 Test Reporting
 
-By default, pytest searches your entire workspace directory to discover tests. For large projects, this can slow down discovery times.
-
-### 6. Enforcing Search Directories in `pyproject.toml`
-To optimize discovery and restrict pytest to search *only* within a specific folder, use the `testpaths` configuration option:
-
-```toml
-[tool.pytest.ini_options]
-addopts = "--verbose"
-markers = [
-    "item: custom marker for item add/remove test cases"
-]
-testpaths = "tests/cart_tests"
-```
-
-
-### 7. Test Reporting
-Extend your local test architecture with metrics and shareable reporting frameworks.
-
-HTML Test Reports (pytest-html)
-Generates a permanent, shareable standalone HTML document summarizing your test run.
-
-```Bash
+### HTML Reports (pytest-html)
+```bash
 pip install pytest-html
 python -m pytest tests/cart_tests/test_cart.py --html=report.html
 ```
 
-
-### 8. Code Coverage Tracking (pytest-cov)
-Integrates coverage.py to calculate what percentage of your source code is verified by your test suite.
-
-```Bash
+### Code Coverage (pytest-cov)
+```bash
 pip install pytest-cov
-```
 
-### Critical Coverage Best Practices:
-Target Product Code Only: Always point the --cov flag at your actual production code directory, not your tests folder. Including the tests/ directory artificially inflates metrics since test files naturally execute 100% of their own lines during discovery.
-
-```Bash
+# Basic coverage
 python -m pytest --cov=my_package
-```
 
-### Tracking Multiple Directories: 
-To aggregate coverage metrics across multiple package roots into a unified report, pass individual flags side-by-side:
-
-```Bash
+# Multiple directories
 python -m pytest --cov=my_package --cov=another_package
-```
 
-### Advanced Coverage Configurations
-Branch Analysis (--cov-branch): Forces the coverage engine to measure logical pathing (evaluating both the True and False outcomes of a conditional if/else block) rather than just tracking line execution. Highly recommended as a baseline suite option.
-
-```Bash
+# Branch analysis
 python -m pytest --cov=my_package --cov-branch
-```
 
-### Visual HTML Dashboards (--cov-report html): 
-Generates an interactive, line-by-line visual report inside a generated htmlcov/ folder. Open htmlcov/index.html in any browser to see code paths highlighted in green (covered) or red (missed statement gaps).
-
-```Bash
+# HTML visual dashboard
 python -m pytest --cov=my_package --cov-report html
 ```
 
-### 9. Parallel Execution Scaling (pytest-xdist)
-Scale your execution speed by distributing your test workloads across multiple CPU cores instead of running them sequentially.
-
-```Bash
+### Parallel Execution (pytest-xdist)
+```bash
 pip install pytest-xdist
-```
 
-### Parallel Execution Commands
-Specify the exact number of worker processes to allocate via the -n flag:
-
-```Bash
+# Run with 3 workers
 python -m pytest -n 3
-```
 
-### Auto-Scale Mode: 
-Instructs pytest to auto-detect and utilize every logical core available on your local runtime architecture:
-
-```Bash
+# Auto-detect CPU cores
 python -m pytest -n auto
 ```
 
+---
 
-## Dependencies
+## 🌐 Web UI Testing with Playwright
 
-This project is built using a structured stack of LangChain orchestration tools, AI model integrations, and machine learning utilities. 
+Playwright provides auto-waiting, faster execution, and multi-browser support for end-to-end web testing.
 
-Below are the explicitly installed core packages along with the exact versions currently running in this environment:
+### Installation
+```bash
+pip install requests
+pip install playwright
+pip install pytest-playwright
+playwright install
+```
 
-### Core Framework & Orchestration
-*   **LangChain Core**
-    *   `langchain==1.3.11`
-    *   `langchain-core==1.4.8`
-*   **Agentic Workflows**
-    *   `langgraph==1.2.7`
+### Execution Modes
 
-### Provider Integrations
-*   **OpenAI Integration**
-    *   `openai==2.44.0`
-    *   `langchain-openai==1.3.3`
-*   **Anthropic Integration**
-    *   `anthropic==0.115.1`
-    *   `langchain-anthropic==1.4.8`
-*   **Google Gemini Integration**
-    *   `google-generativeai==0.8.6`
-    *   `langchain-google-genai==4.2.6`
-*   **Hugging Face Integration**
-    *   `huggingface_hub==1.21.0`
-    *   `transformers==5.12.1`
-    *   `langchain-huggingface==1.2.2`
+**Headless (default):** Runs invisibly for maximum performance
 
-### Environment & Utilities
-*   **Environment Variable Management**
-    *   `python-dotenv==1.2.2`
-*   **Machine Learning & Math Utilities**
-    *   `numpy==2.5.0`
-    *   `scikit-learn==1.9.0`
+**Headed Mode:** Watch tests in a visible browser
+```bash
+python -m pytest tests/web_tests/test_applitools_ui.py --headed
+python -m pytest tests/web_tests/test_applitools_ui.py --headed --slowmo 1000
+```
 
 ---
 
-### Setup and Installation
+## 🚦 Getting Started
 
-To ensure total environment reproducibility and prevent breaking changes from upstream GenAI library updates, lock your versions using a requirements file.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/srinivasskc/ai-engineer.git
+   cd ai-engineer
+   ```
 
-1. Install the packages using your tracked dependencies:
+2. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
+   ```
+
+3. **Run tests:**
+   ```bash
+   python -m pytest
+   ```
+
+---
+
+## 📝 Coverage Best Practices
+
+- Always point `--cov` at your **production code directory**, not the tests folder
+- Including tests/ artificially inflates metrics since test files execute 100% of their own lines
+- Use `--cov-branch` to measure both True and False paths of conditional statements
