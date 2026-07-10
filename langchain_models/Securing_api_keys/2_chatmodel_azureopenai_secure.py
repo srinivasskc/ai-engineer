@@ -13,6 +13,9 @@ github_token = os.getenv("OPENAI_API_KEY")
 
 GITHUB_PAT_PATTERN = re.compile(r"github_pat_[a-zA-Z0-9_]{40,}")
 
+# Your sanitize_output function doesn't care about the model's logic, its mood, or its safety training.
+# If the model had filled that code block with your real token (DEPLOYMENT_SUCCESS_TOKEN: github_pat_123...), your Python filter would have instantly scrubbed it to DEPLOYMENT_SUCCESS_TOKEN: [REDACTED_GITHUB_PAT].
+
 
 def sanitize_output(text: str) -> str:
     """Scans the text and replaces any exposed GitHub PATs with a safe placeholder."""
