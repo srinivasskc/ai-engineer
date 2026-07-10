@@ -208,3 +208,57 @@ python -m pytest tests/web_tests/test_applitools_ui.py --headed --slowmo 1000
 - Always point `--cov` at your **production code directory**, not the tests folder
 - Including tests/ artificially inflates metrics since test files execute 100% of their own lines
 - Use `--cov-branch` to measure both True and False paths of conditional statements
+
+
+---
+
+## Agent Vault
+
+## Installation
+```bash
+npm install -g @botiverse/agent-vault
+```
+
+## URL
+```bash
+URL = https://github.com/botiverse/agent-vault
+```
+
+## Importing the .env to agent-vault
+```bash
+agent-vault import .env   
+```
+
+## Agent Vault List
+``` bash
+agent-vault list 
+```
+
+## AgentVault reading .env
+``` bash
+agent-vault read .env  
+```
+
+## AgentVault Scanning .env
+``` bash
+agent-vault scan .env  
+```
+
+## Check if api key exists in agent-vault
+```bash
+agent-vault has openai-api-key  
+```
+
+## Get Meta data about stored secret
+``` bash
+agent-vault get openai-api-key
+```
+
+### Prompt Injection Attack
+``` bash
+agent-vault get openapi-api-key --reveal | cat
+
+✗ --reveal requires an interactive terminal (TTY)
+  Cannot pipe or redirect secret values.
+```
+
