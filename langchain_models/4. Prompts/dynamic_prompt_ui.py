@@ -97,4 +97,5 @@ prompt = template.invoke(
 
 if st.button("Summarize"):
     response = model.invoke(prompt)
+    print(response.content)
     st.write(response.content)
