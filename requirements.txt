@@ -98,7 +98,6 @@ deprecation==2.1.0
 detect-installer==0.1.0
 dill==0.4.1
 diskcache==5.6.3
-distlib==0.4.3
 distro==1.9.0
 dnspython==2.8.0
 docker==7.1.0
@@ -123,7 +122,6 @@ et_xmlfile==2.0.0
 evaluate==0.4.6
 Events==0.5
 exceptiongroup==1.3.1
-execnet==2.1.2
 executing==2.2.1
 faiss-cpu==1.9.0.post1
 fake-useragent==2.2.0
@@ -422,7 +420,7 @@ opik==2.0.62
 orjson==3.11.9
 ormsgpack==1.12.2
 overrides==7.7.0
-packaging==24.2
+packaging==26.2
 pandas==2.3.3
 pandas-stubs==3.0.3.260530
 parso==0.8.7
@@ -436,7 +434,6 @@ pillow==12.2.0
 pinecone==7.3.0
 pinecone-plugin-assistant==1.8.0
 pinecone-plugin-interface==0.0.7
-pipenv==2026.6.2
 pksuid==1.1.2
 platformdirs==4.9.6
 playwright==1.60.0
@@ -493,13 +490,10 @@ Pysher==1.0.8
 PySocks==1.7.1
 pytest==9.1.1
 pytest-asyncio==1.4.0
-pytest-html==4.2.0
 pytest-json-report==1.5.0
 pytest-metadata==3.1.1
-pytest-xdist==3.8.0
 python-bidi==0.6.10
 python-dateutil==2.9.0.post0
-python-discovery==1.4.4
 python-docx==1.2.0
 python-dotenv==1.2.2
 python-engineio==4.13.2
@@ -622,7 +616,6 @@ uuid6==2025.0.1
 uuid_utils==0.16.0
 uvicorn==0.49.0
 validators==0.35.0
-virtualenv==21.6.1
 vlmrun==0.6.3
 vlmrun-hub==0.1.34
 watchfiles==1.2.0
