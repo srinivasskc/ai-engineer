@@ -53,7 +53,7 @@ length_input = st.selectbox(
     "Select the Explanation Length",
     [
         "Short (1-2) paragraphs",
-        "Medium (3-5) Paragraphs",
+        "Medium (3-5) Paragraphs",cd 
         "Long (Detailed Explanation)",
     ],
 )
@@ -61,6 +61,7 @@ length_input = st.selectbox(
 # Creating Prompt Template using langchain_core.prompts import PromptTemplate
 template = PromptTemplate(
     input_variables=["paper_input", "style_name", "style_description", "length_input"],
+    validate_template=True,
     template="""
 Please summarize the research paper titled {paper_input} with the following specifications:
 - Explanation Style Requestd: {style_name} ({style_description})

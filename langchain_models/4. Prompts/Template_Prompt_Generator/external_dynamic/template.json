@@ -1,0 +1,22 @@
+{
+    "lc": 1,
+    "type": "constructor",
+    "id": [
+        "langchain",
+        "prompts",
+        "prompt",
+        "PromptTemplate"
+    ],
+    "kwargs": {
+        "input_variables": [
+            "length_input",
+            "paper_input",
+            "style_description",
+            "style_name"
+        ],
+        "template": "\nPlease summarize the research paper titled {paper_input} with the following specifications:\n- Explanation Style Requestd: {style_name} ({style_description})\n- Explanation Length: {length_input}\n\nGuidelines:\n1. Core Concepts & Findings:\n   - Clearly explain the primary contribution, architecture, or empirical findings of the paper.\n2. Technical / Mathematical Details (if applicable):\n   - Include key equations, formulas, or system flow diagrams/snippets depending on what the paper focuses on.\n3. Practical Implications & Takeaways:\n   - Highlight practical risks, implementation advice, or architectural trade-offs mentioned in the paper.\n4. Analogies & Intuition:\n   - Use relatable analogies where useful to simplify complex concepts.\n5. Real World Examples:\n   - Summarize the main contribution using relatable real-world examples wherever relevant.\n6. Structure & Tone:\n   - Ensure the explanation strictly adheres to the requested style definition: \"{style_description}\".\n7. Accuracy:\n   - If key technical or mathematical information is not present in the paper, respond with \"Insufficient information available\" for that section instead of guessing.\n",
+        "template_format": "f-string",
+        "validate_template": true
+    },
+    "name": "PromptTemplate"
+}
