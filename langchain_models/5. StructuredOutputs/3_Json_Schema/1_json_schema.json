@@ -1,0 +1,16 @@
+# If we are using BE with Python, FE with Frontend and JSON Schema is used instead of Pydantic or TypedDict.
+
+{
+    "title": "Student",
+    "description": "Schema about Students",
+    "type": "object",
+    "properties": {
+        "name": str,
+        "age": int,
+        "class": str,
+        "cgpa": float
+    },
+    "required": [
+        "name"
+    ],
+}

@@ -6,19 +6,26 @@ Welcome to my central repository for tracking progress, projects, and learning m
 
 ## 📂 Repository Structure
 
-The repository is organized into targeted modules focusing on different aspects of Python and hands-on exercises:
+The repository is organized into targeted modules focusing on different aspects of Python, AI/LLM integration, and testing:
 
 | Directory | Description |
 |-----------|--------------|
+| `langchain_models/` | **Main Learning Module** - LangChain tutorials covering LLMs, ChatModels, Embeddings, Prompts, and Structured Outputs |
 | `oops_concepts/` | Core Object-Oriented Programming principles (Classes, Inheritance, Polymorphism, Encapsulation, Tuples) |
 | `python_freecodecamp/` | Practical algorithms, scripting logic, and foundational programming challenges |
 | `python_tau/` | Advanced deep dives into object mechanics (Polymorphism, Method Overriding) |
 | `pytest_tau/` | Pytest testing guides and web UI testing with Playwright |
+| `prompt_directory/` | Prompt templates and text files for AI interactions |
+| `test-generation-agent/` | Test generation automation using AI agents |
+| `5day_ai_agents_course/` | Course materials for AI agents development |
 
 ---
 
 ## 🚀 Key Learning Milestones
 
+- **LangChain & LLM Integration:** Working with various LLM providers (OpenAI, Anthropic, Google Gemini, Hugging Face)
+- **Structured Outputs:** Implementing Pydantic models and TypedDict for type-safe AI responses
+- **Prompt Engineering:** Building dynamic prompts, chatbots, and message templates
 - **Object-Oriented Programming (OOP):** Building robust, reusable code components using method overriding and polymorphic classes
 - **Data Structures & Patterns:** Implementing foundational Python data structures (Tuples, Lists) and algorithmic logic
 - **Interactive Development:** Leveraging Jupyter Notebooks for rapid prototyping and data visualization
@@ -28,8 +35,9 @@ The repository is organized into targeted modules focusing on different aspects 
 
 ## 🛠️ Tech Stack & Environment
 
-- **Languages:** Python (32.1%), Jupyter Notebook (67.9%)
+- **Languages:** Python, Jupyter Notebook
 - **Environment Management:** `.python-version` configurations and `uv` for fast package resolution
+- **AI/LLM Providers:** OpenAI, Anthropic (Claude), Google Gemini, Hugging Face
 
 ---
 
@@ -51,6 +59,32 @@ This project uses a structured stack of LangChain orchestration tools, AI model 
 - **python-dotenv:** `1.2.2`
 - **numpy:** `2.5.0`
 - **scikit-learn:** `1.9.0`
+
+---
+
+## 📚 LangChain Learning Modules
+
+### 1. LLMs (`langchain_models/1. LLMs/`)
+Introduction to Large Language Models and basic LangChain integrations.
+
+### 2. ChatModels (`langchain_models/2. ChatModels/`)
+Working with chat-based language models.
+
+### 3. EmbeddedModels (`langchain_models/3. EmbeddedModels/`)
+Text embeddings and vector representations.
+
+### 4. Prompts (`langchain_models/4. Prompts/`)
+- **Chatbot:** Basic chatbot implementation
+- **ChatPromptTemplate_DynamicMessages:** Dynamic message handling
+- **message_placeholder:** Message placeholder techniques
+- **Template_Prompt_Generator:** Prompt template generation
+
+### 5. Structured Outputs (`langchain_models/5. StructuredOutputs/`)
+- **Pydantic:** Using Pydantic models for structured AI outputs
+- **TypedDict:** Type-safe dictionaries for structured responses
+
+### Securing API Keys (`langchain_models/Securing_api_keys/`)
+Best practices for managing API credentials securely.
 
 ---
 
@@ -209,56 +243,56 @@ python -m pytest tests/web_tests/test_applitools_ui.py --headed --slowmo 1000
 - Including tests/ artificially inflates metrics since test files execute 100% of their own lines
 - Use `--cov-branch` to measure both True and False paths of conditional statements
 
-
 ---
 
-## Agent Vault
+## 🔐 Agent Vault
 
-## Installation
+Securely manage API keys and sensitive credentials.
+
+### Installation
 ```bash
 npm install -g @botiverse/agent-vault
 ```
 
-## URL
+### URL
 ```bash
 URL = https://github.com/botiverse/agent-vault
 ```
 
-## Importing the .env to agent-vault
+### Importing the .env to agent-vault
 ```bash
 agent-vault import .env   
 ```
 
-## Agent Vault List
-``` bash
+### Agent Vault List
+```bash
 agent-vault list 
 ```
 
-## AgentVault reading .env
-``` bash
+### AgentVault reading .env
+```bash
 agent-vault read .env  
 ```
 
-## AgentVault Scanning .env
-``` bash
+### AgentVault Scanning .env
+```bash
 agent-vault scan .env  
 ```
 
-## Check if api key exists in agent-vault
+### Check if api key exists in agent-vault
 ```bash
 agent-vault has openai-api-key  
 ```
 
-## Get Meta data about stored secret
-``` bash
+### Get Meta data about stored secret
+```bash
 agent-vault get openai-api-key
 ```
 
 ### Prompt Injection Attack
-``` bash
+```bash
 agent-vault get openapi-api-key --reveal | cat
 
 ✗ --reveal requires an interactive terminal (TTY)
   Cannot pipe or redirect secret values.
 ```
-
