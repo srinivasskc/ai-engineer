@@ -1,0 +1,32 @@
+# Json Output Parser
+
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+from dotenv import load_dotenv
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import JsonOutputParser
+
+load_dotenv()
+
+# https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0
+# First, we need to connect the HuggingFaceEndpoint.
+
+huggingface_llm = HuggingFaceEndpoint(
+    repo_id="Qwen/Qwen2.5-7B-Instruct", task="text-generation"
+)
+
+
+model = ChatHuggingFace(llm=huggingface_llm)
+
+parser = JsonOutputParser()
+
+# 1st Prompt - Detailed Report
+template1 = PromptTemplate(
+    template="Give me the name, age, city of a fictional person. {person} \n {format_instruction}",
+    input_variables=["person"],
+    partial_variables={"format_instruction": parser.get_format_instructions()},
+)
+
+chain = template1 | model | parser
+
+result = chain.invoke({"person": "Albert Einstein"})
+print(result)
