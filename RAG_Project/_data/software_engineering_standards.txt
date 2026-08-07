@@ -1,0 +1,31 @@
+# SOFTWARE ENGINEERING STANDARDS & GUIDELINES
+# Project: Core Services
+# Version: 1.0.0
+
+[1. GENERAL PRINCIPLES]
+- Write clean, self-documenting code.
+- Keep functions small and focused on a single task.
+- Do not repeat code (DRY principle).
+- Optimize for readability over cleverness.
+
+[2. FILE & NAMING CONVENTIONS]
+- Use snake_case for file names and python modules (e.g., user_auth.py).
+- Use camelCase for variables and functions in JavaScript/TypeScript.
+- Use PascalCase for classes and interface definitions.
+- Constants must be written in ALL_CAPS.
+
+[3. CODE FORMATTING & STYLE]
+- Indentation: 4 spaces (no hard tabs).
+- Maximum line length: 100 characters.
+- Always wrap conditional blocks in curly braces { }, even for single-line statements.
+- Remove all unused imports and dead code before committing.
+
+[4. DOCUMENTATION & COMMENTS]
+- Every public function/method must include a docstring or block comment explaining inputs, outputs, and raised exceptions.
+- Inline comments should explain "why" a complex choice was made, not "what" the code is doing.
+- Update the README.md file whenever adding a new microservice or changing environment variables.
+
+[5. TESTING & QUALITY ASSURANCE]
+- Unit test coverage must remain above 80% for all core logic modules.
+- Test files must mirror the source file structure (e.g., test_user_auth.py tests user_auth.py).
+- All pull requests require at least one peer review approval and passing CI pipelines.

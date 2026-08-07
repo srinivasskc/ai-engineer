@@ -1,0 +1,18 @@
+# Contact email for vulnerability reports
+Contact: mailto:security@example.com
+
+# Link to your security/bug bounty page
+Preferred-Languages: en
+Canonical: https://example.com
+
+# Policy or disclosure rules
+Policy: https://example.com
+
+# Acknowledge security researchers
+Acknowledgments: https://example.com
+
+# Encryption key for secure communication
+Encryption: https://example.com
+
+# Hiring security personnel (optional)
+Hiring: https://example.com

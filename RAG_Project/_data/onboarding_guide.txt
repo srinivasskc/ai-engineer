@@ -1,0 +1,43 @@
+==================================================
+EMPLOYEE ONBOARDING GUIDE & CHECKLIST
+==================================================
+
+Employee Name: [Insert Name]
+Position Title: [Insert Title]
+Department: [Insert Department]
+Start Date: [MM/DD/YYYY]
+Manager/Mentor: [Insert Name]
+
+--------------------------------------------------
+1. PRE-ARRIVAL (Before Day 1)
+--------------------------------------------------
+[ ] Send official welcome email with start details
+[ ] Setup computer, email address, and system logins
+[ ] Prepare desk, chair, and access badge/ID
+[ ] Assign an onboarding buddy or mentor
+
+--------------------------------------------------
+2. DAY ONE: ORIENTATION
+--------------------------------------------------
+[ ] 10:00 AM - Welcome session and team introduction
+[ ] 11:00 AM - Complete HR paperwork and tax forms
+[ ] 12:00 PM - IT setup check and system access walkthrough
+[ ] 02:00 PM - Department overview with direct manager
+[ ] 03:00 PM - Office tour and facility orientation
+
+--------------------------------------------------
+3. WEEK ONE: INTEGRATION
+--------------------------------------------------
+[ ] Review company handbook, policies, and culture
+[ ] Complete mandatory security and safety training
+[ ] Attend introductory 1-on-1 check-in with manager
+[ ] Begin small, achievable initial tasks
+
+--------------------------------------------------
+4. FIRST MONTH: MILESTONES
+--------------------------------------------------
+[ ] Weekly check-in meetings with manager or buddy
+[ ] Complete core role-specific training modules
+[ ] Review 30-day goals and address any questions
+[ ] Submit initial onboarding feedback survey
+==================================================

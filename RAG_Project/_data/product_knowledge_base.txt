@@ -1,0 +1,38 @@
+[PRODUCT_INFO]
+Product Name: CloudSync Pro
+Product Version: 3.5
+Category: Cloud Storage & File Management
+Last Updated: 2026-06-15
+
+[COMPANY_DETAILS]
+Company Name: SyncTech Global
+Support Email: support@synctech-example.com
+Support Hours: Monday to Friday, 9:00 AM - 6:00 PM (IST)
+
+[CORE_FEATURES]
+- Automatic background file sync across local folders and cloud storage.
+- Real-time team collaboration and file sharing with permission controls.
+- End-to-end AES-256 encryption for data at rest and in transit.
+- Version history tracking up to 30 days for deleted or edited files.
+
+[PRICING_PLANS]
+- Free Tier: 5 GB storage, single user, basic sync.
+- Pro Plan: $9.99/month, 1 TB storage, up to 5 devices, priority support.
+- Team Plan: $24.99/user/month, unlimited storage, advanced admin controls.
+
+[FREQUENTLY_ASKED_QUESTIONS]
+
+Q: How do I reset my password?
+A: Go to the login screen, click "Forgot Password", and enter your registered email address. You will receive a reset link within 5 minutes.
+
+Q: Can I recover a deleted file?
+A: Yes. Log into your web dashboard, navigate to the "Trash" folder, select the file, and click "Restore". Files remain in the trash for 30 days before permanent deletion.
+
+Q: What should I do if sync is paused?
+A: Check your internet connection first. Click the CloudSync Pro tray icon, go to Settings, and click "Resume Sync". If the issue continues, restart the application.
+
+[TROUBLESHOOTING_STEPS]
+Error Code E-101 (Connection Timeout):
+1. Verify internet or local network connectivity.
+2. Ensure corporate firewalls or VPNs do not block port 443.
+3. Restart the CloudSync Pro background service.
